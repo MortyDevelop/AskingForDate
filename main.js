@@ -22,16 +22,14 @@ function repositionBtnNo() {
 }
 
 btnNo.addEventListener("click", (event) => {
-  repositionBtnNo();
+  // Delay the repositioning to ensure it updates on mobile
+  setTimeout(() => {
+    repositionBtnNo();
+  }, 50); // 50ms delay
 });
 
 btnYes.addEventListener("click", (e) => {
   btnNo.classList.add("hide");
   imageOne.classList.add("hide");
   imageTwo.classList.remove("hide");
-});
-
-// Reposition btnNo when the window is resized
-window.addEventListener("resize", () => {
-  repositionBtnNo();
 });
